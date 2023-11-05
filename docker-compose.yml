@@ -7,9 +7,12 @@ services:
     environment:
       POSTGRES_USER: name
       POSTGRES_PASSWORD: name
+      POSTGRES_DB: to_pomodoro
       PGDATA: /data/postgres
     volumes:
        - postgres:/data/postgres
+       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
     ports:
       - "5432:5432"
     networks:

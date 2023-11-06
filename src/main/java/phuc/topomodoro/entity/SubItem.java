@@ -18,9 +18,4 @@ public class SubItem {
     private Integer id;
     private String title;
     private Boolean completed;
-
-    @ManyToOne
-    @JoinColumn(name = "item_id")
-    @JsonBackReference
-    private Item item;
 }

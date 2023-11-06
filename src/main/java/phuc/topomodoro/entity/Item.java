@@ -23,10 +23,9 @@ public class Item {
     private LocalDate created;
     private LocalDate updated;
 
-    @OneToMany(mappedBy = "item",
-            orphanRemoval = true,
+    @OneToMany( orphanRemoval = true,
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY)
-    @JsonManagedReference
+    @JoinColumn(name = "item_id")
     private List<SubItem> subItems;
 }

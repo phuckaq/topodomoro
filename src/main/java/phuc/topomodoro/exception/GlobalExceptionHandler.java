@@ -17,4 +17,13 @@ public class GlobalExceptionHandler {
                 .message(ex.getMessage())
                 .build();
     }
+
+    @ExceptionHandler(UnableSaveRecordExceptionHandler.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseBody
+    public ErrorResponse handleUnableSaveRecordException(Exception ex) {
+        return ErrorResponse.builder()
+                .message(ex.getMessage())
+                .build();
+    }
 }
